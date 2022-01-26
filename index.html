@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.15.1/css/all.css"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles/style.css" />
+    link
+    <title>My Calendar</title>
+  </head>
+  <body>
+    <main>
+      <section>
+        <button id="btnToggleDetails" class="btn btn-info">
+          Show/Hide Details
+        </button>
+      </section>
+      <aside>
+        <h3>Task Information</h3>
+        <div class="form">
+          <div><i class="far fa-star iImportant"></i></div>
+          <div>
+            <label for="" class="form-label">Title</label>
+            <input
+              type="text"
+              class="form-control"
+              id="txtTitle"
+              placeholder="Title"
+            />
+          </div>
+          <div>
+            <label for="" class="form-label">Due Date</label>
+            <input type="datetime-local" class="form-control" id="txtDueDate" />
+          </div>
+          <div>
+            <label for="" class="form-label">Location</label>
+            <input
+              type="text"
+              class="form-control"
+              id="txtLocation"
+              placeholder="Location"
+            />
+          </div>
+          <div>
+            <label class="form-label">Description</label>
+            <textarea
+              class="form-control"
+              id="txtDescription"
+              rows="3"
+            ></textarea>
+          </div>
+          <div>
+            <label for="" class="form-label">Participants</label>
+            <input
+              type="text"
+              class="form-control"
+              id="txtTitle"
+              placeholder="Participants"
+            />
+          </div>
+          <div>
+            <label for="" class="form-label">Color</label>
+            <input type="color" class="form-control" id="txtColor" />
+          </div>
+          <div>
+            <button id="btnSave">Save Task</button>
+          </div>
+        </div>
+      </aside>
+    </main>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="./scripts/script.js"></script>
+  </body>
+</html>
