@@ -68,7 +68,7 @@ function saveTask() {
   console.log(theTask);
   displayTask(theTask);
 
-  // clearForm();
+  clearForm();
 }
 
 function init() {
