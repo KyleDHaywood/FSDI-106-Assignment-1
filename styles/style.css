@@ -2,55 +2,124 @@ html,
 body {
   margin: 0;
   padding: 0;
-  background-color: rgb(232, 251, 226);
 }
 
-main {
-  /* background-image: url("/img/nuns.jpg"); */
-  background-size: cover;
-  display: flex;
-  margin-top: -25px;
-  margin-bottom: -40px;
-}
 section {
-  background-image: url("/img/nuns.jpg");
+  background-image: url("../img/todo.jpg");
   background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
   flex: 2;
-  min-height: 900px;
-  background-color: rgba(255, 255, 255, 0.054);
-  border: 9px outset rgba(17, 164, 37, 0.34);
-  border-radius: 15px;
 }
 aside {
   flex: 1;
-  min-height: 900px;
-  background-color: rgba(255, 255, 255, 0.455);
-  border: 9px outset rgba(17, 164, 37, 0.34);
-  border-radius: 15px;
 }
-.form-label {
-  margin-bottom: 5px;
-}
-label {
-  color: darkgreen;
-}
+
 .button-container {
-  margin-top: 30px;
+  /* margin-top: 30px; */
   text-align: center;
 }
 
 #txtColor {
-  width: 15%;
+  width: 30%;
 }
+
 .iImportant {
   font-size: 32px;
   cursor: pointer;
-  color: red;
+  color: gold;
 }
 
-/* **************** */
-/* ************** Style for the task ***** */
-/* ***************** */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-image: url("../img/bg.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+main {
+  min-height: 90vh; /* This means that he content in main will be 90% of the screens view height, making it more responsive than px */
+  width: 80%; /* same here width of main will be 80% the body width, 
+    use % not px, makes it more responsive */
+  display: inline-flex;
+  box-shadow: 5px 5px 50px 10px rgba(0, 0, 0, 0.609);
+  border: 50px outset rgb(160, 83, 39);
+  border-radius: 2%;
+  overflow: hidden; /* Make everything that is outside the border hidden. Like the corner of the img */
+}
+aside {
+  background-image: url("../img/bg__task.jpg");
+  background-size: cover;
+}
+
+aside h3 {
+  width: 80%;
+  color: honeydew;
+  font-size: 3rem;
+  margin: 20% auto 0 auto;
+}
+
+.form {
+  width: 80%;
+  margin: 5% auto 0 auto;
+}
+
+label {
+  color: honeydew;
+  font-size: 1.3rem;
+  margin-top: 4%;
+}
+
+#btnSave {
+  width: 100%;
+  background-color: rgb(1, 70, 1);
+  box-shadow: 5px 5px 50px 1px rgba(0, 0, 0, 0.39);
+  color: honeydew;
+  font-size: 1.3rem;
+  font-weight: bold;
+  border: none;
+  border-radius: 20px;
+  margin-top: 10%;
+  padding: 3%;
+}
+
+#btnSave:hover {
+  background-color: rgba(1, 70, 1, 0.589);
+}
+
+#btnSave:active {
+  background-color: rgb(1, 92, 1);
+  margin-top: 12%;
+  padding: 2%;
+  box-shadow: inset 5px 5px 50px 5px rgba(0, 0, 0, 0.561);
+  color: darkgrey;
+}
+
+.btn-info {
+  width: 100%;
+  background-color: rgba(140, 228, 240, 0.52);
+  border: none;
+  border-radius: 0;
+  font-weight: bold;
+}
+
+.btn-info:hover {
+  background-color: rgba(140, 228, 240, 0.787);
+}
+
+/* ********************************************** */
+/* ************** Style for the task ************ */
+/* ********************************************** */
 
 .task {
   display: flex;

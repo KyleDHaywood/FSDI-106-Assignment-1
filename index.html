@@ -13,22 +13,29 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="./styles/style.css" />
-    link
+
     <title>My Calendar</title>
   </head>
+
   <body>
     <main>
       <section>
+        <h1>Welcome to my super calendar</h1>
         <button id="btnToggleDetails" class="btn btn-info">
           Show/Hide Details
         </button>
+        <div class="task-container"></div>
       </section>
+
       <aside>
         <h3>Task Information</h3>
         <div class="form">
-          <div><i class="far fa-star iImportant"></i></div>
+          <div class="icon-container">
+            <i class="far fa-star iImportant"></i>
+          </div>
+
           <div>
-            <label for="" class="form-label">Title</label>
+            <label class="form-label">Title</label>
             <input
               type="text"
               class="form-control"
@@ -37,11 +44,11 @@
             />
           </div>
           <div>
-            <label for="" class="form-label">Due Date</label>
+            <label class="form-label">Date</label>
             <input type="datetime-local" class="form-control" id="txtDueDate" />
           </div>
           <div>
-            <label for="" class="form-label">Location</label>
+            <label class="form-label">Location</label>
             <input
               type="text"
               class="form-control"
@@ -58,26 +65,29 @@
             ></textarea>
           </div>
           <div>
-            <label for="" class="form-label">Participants</label>
+            <label class="form-label">Participants</label>
             <input
               type="text"
               class="form-control"
-              id="txtTitle"
+              id="txtParticipants"
               placeholder="Participants"
             />
           </div>
           <div>
-            <label for="" class="form-label">Color</label>
+            <label class="form-label">Color</label>
             <input type="color" class="form-control" id="txtColor" />
           </div>
-          <div>
-            <button id="btnSave">Save Task</button>
+          <div class="button-container">
+            <button id="btnSave" class="btn btn-sm btn-primary">
+              Save Task
+            </button>
           </div>
         </div>
       </aside>
     </main>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="./scripts/task.js"></script>
     <script src="./scripts/script.js"></script>
   </body>
 </html>
