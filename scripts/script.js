@@ -56,6 +56,12 @@ function saveTask() {
   let description = $("#txtDescription").val();
   let participants = $("#txtParticipants").val();
   let color = $("#txtcolor").val();
+
+  if (!title) {
+    alert("Error, empty titles are not allowed. Get out of here!");
+    return;
+  }
+
   let theTask = new Task(
     isImportant,
     title,
@@ -65,13 +71,66 @@ function saveTask() {
     dueDate,
     color
   );
-  console.log(theTask);
-  displayTask(theTask);
 
-  clearForm();
+  $.ajax({
+    type: "POST",
+    url: "https://fsdiapi.azurewebsites.net/api/tasks/",
+    data: JSON.stringify(theTask),
+    contentType: "application/json",
+    success: function (serverResponse) {
+      console.log(`Server says: ${serverResponse}`);
+      let savedTask = JSON.parse(serverResponse);
+
+      displayTask(savedTask);
+      console.log(JSON.stringify(theTask));
+      clearForm();
+    },
+    error: function (errorDetails) {
+      console.log(`Save Failed: ${errorDetails}`);
+    },
+  });
 }
 
+function deleteTask() {
+  $.ajax({
+    type: "DELETE",
+    url: "https://fsdiapi.azurewebsites.net/api/tasks/clear/Kyle",
+    success: function () {
+      $(".task-container").html("");
+    },
+  });
+}
+
+function fetchTasks() {
+  $.ajax({
+    type: "GET",
+    url: "https://fsdiapi.azurewebsites.net/api/tasks",
+
+    success: function (serverResponse) {
+      console.log(`Server says: ${serverResponse}`);
+      let allTasks = JSON.parse(serverResponse);
+
+      for (let i = 0; i < allTasks.length; i++) {
+        let task = allTasks[i];
+        if (task.name == "Kyle") {
+          console.log(task);
+          displayTask(task);
+        }
+      }
+    },
+    error: function (errorDetails) {
+      console.log(`Req Failed: ${errorDetails}`);
+    },
+  });
+}
+$("#btnDeleteTask").click(deleteTask);
 function init() {
+  //////////// LOAD DATA/////////////
+
+  fetchTasks();
+
+  /////////// HOOK EVENTS////////////
+
   $("#btnSave").click(saveTask);
   $(".iImportant").click(toggleImportant);
   $("#btnToggleDetails").click(toggleDetails);
